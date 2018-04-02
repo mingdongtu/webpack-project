@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title><%= htmlWebpackPlugin.options.title%></title>
+	<!-- <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main.entry%>"></script> -->
+</head>
+<body>
+
+ <%= htmlWebpackPlugin.options.date%>
+ <!-- 将对象中的内容遍历出来 -->
+ <% for(var key in htmlWebpackPlugin.files) {%>        
+             <%= key %>:<%= JSON.stringify(htmlWebpackPlugin.files[key])%>
+<%} %>
+ 下面是options
+ <% for(var key in htmlWebpackPlugin.options) {%>        
+             <%= key %>:<%= JSON.stringify(htmlWebpackPlugin.options[key])%>
+<%} %>
+
+<!-- <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.a.entry%>"></script> -->
+</body>
+</html>
